@@ -55,21 +55,21 @@
 #Exemplo de utilização: ter uma pasta que seja alimentada com publicadades e deixar o whatsapp web ligado e essa automação iria 
 #transferir todas as publicidades para o whatsapp web automaticamente e enviar as mensagens.
 
-#Requerimentos
-import pyautogui
-import time
+# #Requerimentos
+# import pyautogui
+# import time
 
-time.sleep(4)
+# time.sleep(4)
 
-#Criando o laço de repetição para fazer a transferência dos arquivos
-for i in range(43):
-    # move o mouse até a posição desejada
-    pyautogui.moveTo(1084,288, duration=0.5)
-    # clica no elemento de transferência, arrasta até o outro ponto e solta o arquivo
-    pyautogui.dragTo(1800,468, button="left", duration=0.5)
-    time.sleep(0.5)
+# #Criando o laço de repetição para fazer a transferência dos arquivos
+# for i in range(43):
+#     # move o mouse até a posição desejada
+#     pyautogui.moveTo(1084,288, duration=0.5)
+#     # clica no elemento de transferência, arrasta até o outro ponto e solta o arquivo
+#     pyautogui.dragTo(1800,468, button="left", duration=0.5)
+#     time.sleep(0.5)
 
-pyautogui.alert("Transferência concluída!")
+# pyautogui.alert("Transferência concluída!")
 
 ##########################################################################
 
