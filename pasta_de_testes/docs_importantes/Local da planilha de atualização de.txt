@@ -1,0 +1,33 @@
+Estou consultando as fontes de dados que os meus painéis powerbi estão consumindo e vejo que muitas se tratam de views, conforme abaixo extraído do power query:
+
+let
+    Fonte = Databricks.Catalogs("adb-6523536500265509.9.azuredatabricks.net", "/sql/1.0/warehouses/5eeec6f85950ced2", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+    oni_data_hub_Database = Fonte{[Name="oni_data_hub",Kind="Database"]}[Data],
+    catalogo_de_dados_Schema = oni_data_hub_Database{[Name="catalogo_de_dados",Kind="Schema"]}[Data],
+    vw_catalogo_biz_View = catalogo_de_dados_Schema{[Name="vw_catalogo_biz",Kind="View"]}[Data]
+in
+    vw_catalogo_biz_View
+
+Muito bem, não tenho pleno conhecimento da arquitetura de dados, mas posso afirmar que as nossas camadas na storage da azure são:
+- Raw, que equivale à camada bronze;
+- Trs, que equivale à prata; e 
+- Biz, que equivale à camada ouro.
+
+Nessa linha e nesse contexto de arquiteturas de dados com Azure e databricks, me explique o que representam essas Views.
+
+
+
+No seu contexto de uso do Databricks e Azure, as views referenciadas na consulta representam camadas lógicas que permitem acessar dados de maneira organizada e otimizada sem necessariamente duplicar ou mover os dados físicos.
+
+Explicação das camadas:
+Raw (Bronze): Dados brutos, sem processamento. São os dados originais carregados no sistema.
+Trs (Prata): Dados transformados e limpos, prontos para análises mais detalhadas.
+Biz (Ouro): Dados refinados, prontos para serem consumidos por sistemas de BI, como o Power BI, para relatórios e análises finais.
+As views (no caso, como a "vw_catalogo_biz") referenciam dados da camada Biz. Elas são usadas para fornecer uma interface estruturada e filtrada desses dados, permitindo consultas rápidas e focadas em relatórios de BI.
+
+
+
+
+
+
+ 

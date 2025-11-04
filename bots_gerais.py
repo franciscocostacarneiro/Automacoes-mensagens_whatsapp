@@ -1,6 +1,6 @@
 # Requests
-import pyautogui 
-from time import sleep
+# import pyautogui 
+# from time import sleep
 
 #BOT DE MINERAÇÃO
 #chegando até o lugar da mineração
@@ -47,3 +47,157 @@ from time import sleep
 # pyautogui.write("itulo de uma nova pasta", interval=0.05)
 # pyautogui.press("enter")
 # print("Fim do script")
+
+##########################################################################
+
+#1 DESAFIO PARA A CRIAÇÃO DE UM BOT DE VARREDURA DE DOCUMENTOS EM UMA PASTA E MANDAR A OUTRA
+
+#Exemplo de utilização: ter uma pasta que seja alimentada com publicadades e deixar o whatsapp web ligado e essa automação iria 
+#transferir todas as publicidades para o whatsapp web automaticamente e enviar as mensagens.
+
+#Requerimentos
+import pyautogui
+import time
+
+time.sleep(4)
+
+#Criando o laço de repetição para fazer a transferência dos arquivos
+for i in range(43):
+    # move o mouse até a posição desejada
+    pyautogui.moveTo(1084,288, duration=0.5)
+    # clica no elemento de transferência, arrasta até o outro ponto e solta o arquivo
+    pyautogui.dragTo(1800,468, button="left", duration=0.5)
+    time.sleep(0.5)
+
+pyautogui.alert("Transferência concluída!")
+
+##########################################################################
+
+# 2 DESAFIO PARA A CRIAÇÃO DE UM BOT DE VARREDURA DE DOCUMENTOS EM UMA PASTA E MANDAR A OUTRA
+
+# import os
+# import time
+# import pyautogui
+
+# # Caminho da pasta de origem e destino
+# pasta_origem =  pyautogui.prompt("Digite o caminho da pasta de origem:", default=r"C:\Users\Francisco\Documents\Origem")
+# pasta_destino = pyautogui.prompt("Digite o caminho da pasta de destino:", default=r"C:\Users\Francisco\Documents\Destino")
+
+# # Lista todos os arquivos da pasta (ignorando subpastas)
+# arquivos = [f for f in os.listdir(pasta_origem) if os.path.isfile(os.path.join(pasta_origem, f))]
+
+# # Mostra quantos arquivos foram encontrados
+# pyautogui.alert(f"Foram encontrados {len(arquivos)} arquivos para processar.")
+
+# # Loop dinâmico baseado no número real de arquivos
+# for i, arquivo in enumerate(arquivos, start=1):
+#     print(f"Processando arquivo {i}/{len(arquivos)}: {arquivo}")
+
+#     # Exemplo: ação com PyAutoGUI (substitua pelo que o seu robô faz)
+#     pyautogui.hotkey('ctrl', 'c')  # Exemplo de cópia
+#     time.sleep(1)
+#     pyautogui.hotkey('ctrl', 'v')  # Exemplo de colagem
+#     time.sleep(1)
+
+#     # (Opcional) mover arquivo para a pasta de destino
+#     caminho_origem = os.path.join(pasta_origem, arquivo)
+#     caminho_destino = os.path.join(pasta_destino, arquivo)
+#     os.rename(caminho_origem, caminho_destino)
+
+# pyautogui.alert("Processamento concluído!")
+
+##########################################################################
+
+# 3 DESAFIO PARA A CRIAÇÃO DE UM BOT DE VARREDURA DE DOCUMENTOS EM UMA PASTA E MANDAR A OUTRA MAIS MODERNO COM PROCESSAMENTO EM TELA
+
+# import os
+# import time
+# import shutil
+# import tkinter as tk
+# from tkinter import filedialog, messagebox, ttk
+
+# # ==============================
+# # 1️⃣ Seleção das pastas
+# # ==============================
+# root = tk.Tk()
+# root.withdraw()  # Oculta a janela principal do tkinter
+
+# pasta_origem = filedialog.askdirectory(title="Selecione a pasta de ORIGEM")
+# if not pasta_origem:
+#     messagebox.showerror("Erro", "Você não selecionou a pasta de origem.")
+#     exit()
+
+# pasta_destino = filedialog.askdirectory(title="Selecione a pasta de DESTINO")
+# if not pasta_destino:
+#     messagebox.showerror("Erro", "Você não selecionou a pasta de destino.")
+#     exit()
+
+# # ==============================
+# # 2️⃣ Coleta dos arquivos
+# # ==============================
+# arquivos = [f for f in os.listdir(pasta_origem) if os.path.isfile(os.path.join(pasta_origem, f))]
+
+# if not arquivos:
+#     messagebox.showinfo("Aviso", "Nenhum arquivo encontrado na pasta de origem.")
+#     exit()
+
+# total_arquivos = len(arquivos)
+
+# # ==============================
+# # 3️⃣ Criação da janela de progresso
+# # ==============================
+# janela = tk.Tk()
+# janela.title("Processamento de Arquivos")
+# janela.geometry("550x160")
+# janela.resizable(False, False)
+
+# # Label principal
+# label_titulo = tk.Label(janela, text="Processando arquivos...", font=("Segoe UI", 12, "bold"))
+# label_titulo.pack(pady=10)
+
+# # Label de status
+# label_status = tk.Label(janela, text=f"Iniciando processamento de {total_arquivos} arquivos...", font=("Segoe UI", 10))
+# label_status.pack(pady=5)
+
+# # Barra de progresso
+# progress = ttk.Progressbar(janela, orient="horizontal", length=500, mode="determinate")
+# progress.pack(pady=10)
+# progress["maximum"] = total_arquivos
+# progress["value"] = 0
+
+# # ==============================
+# # 4️⃣ Função principal de processamento
+# # ==============================
+# def processar():
+#     for i, arquivo in enumerate(arquivos, start=1):
+#         # Atualiza label de status
+#         label_status.config(text=f"Processando arquivo {i}/{total_arquivos}: {arquivo}")
+#         janela.update_idletasks()
+
+#         # Caminhos completos
+#         origem = os.path.join(pasta_origem, arquivo)
+#         destino = os.path.join(pasta_destino, arquivo)
+
+#         # Simulação de automação (substitua aqui pelo seu código PyAutoGUI)
+#         time.sleep(0.3)  # Pausa simulando tempo de execução
+        
+#         # Move o arquivo após "processar"
+#         try:
+#             shutil.move(origem, destino)
+#         except Exception as e:
+#             print(f"⚠️ Erro ao mover {arquivo}: {e}")
+
+#         # Atualiza a barra de progresso
+#         progress["value"] = i
+#         janela.update_idletasks()
+
+#     # Finalização
+#     label_status.config(text="✅ Todos os arquivos foram processados com sucesso!")
+#     messagebox.showinfo("Concluído", f"{total_arquivos} arquivos foram processados e movidos com sucesso.")
+#     janela.destroy()
+
+# # ==============================
+# # 5️⃣ Inicia o processamento
+# # ==============================
+# janela.after(1000, processar)
+# janela.mainloop()

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Frame</title>
+    <script src="scripts.js"></script>
+    <!-- Power BI client -->
+    <script src="https://cdn.jsdelivr.net/npm/powerbi-client/dist/powerbi.js"></script>
+    <!-- Funções do backend -->
+    <script src="https://ss-oni.hml.sistemaindustria.com.br/api-ss-oni/public/embed-functions"></script>
+    <style>
+    .pbi-wrapper {
+        background: none;
+    }
+    .pbi-placeholder.hidden {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .pbi-embed, .pbi-thumb, .pbi-placeholder {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pbi-placeholder {
+        position: absolute;
+        transition: opacity .25s ease;
+    }
+
+    div.pbi-embed iframe {
+        border: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="background-image: url('imgs/36.jpg');" class="corpoGrid">
+        <button onclick="GoToMenuEixoMacrossetorial();" id="return_2"></button>
+ <!--        <button onclick="GoToGridMetal2()" id="nextFullMacro"></button> -->
+        <div class="container2">
+            <!-- Nova implementação, utilizando a ferramenta e com navegação. -->
+            <div class="blocksGrid" onclick="Inteligencia_setorial_1()">
+                <div class="pbi-wrapper adjust">
+                    <div class="pbi-placeholder hidden">
+                        <!-- Este bloco é exibido enquanto o Power BI não está pronto para mostrar relatório. -->
+                        <img alt="Pré-visualização do report" class="pbi-thumb" />
+                        <span class="pbi-badge">Carregando…</span>
+                    </div>
+                    <div id="pbi1" class="pbi-embed" aria-label="Power BI Report 1">
+                        <!-- Este bloco é o container que será preenchido com o relatório. -->
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Implementação original, fornecida pelo Observatório. -->
+            <div class="blocksGrid">        
+                <iframe onclick="Inteligencia_setorial_2()" class="adjust" title="Dash_Mapa_Dados_v2"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiZTkzYWIxYWItYTY5OS00M2IwLWJhOTUtOTAyN2E3MTY3NTczIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9&pageName=ReportSectioncd804f810dc80991253b"
+                    frameborder="0" allowFullScreen="false"></iframe>
+                <button onclick="Inteligencia_setorial_2()" class="overlay"></button>
+            </div>
+
+            <div class="blocksGrid">        
+                <iframe onclick="Inteligencia_setorial_3()" class="adjust" title="Dash_Mapa_Dados_v2"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiZTkzYWIxYWItYTY5OS00M2IwLWJhOTUtOTAyN2E3MTY3NTczIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9&pageName=ReportSection36d79f662f2d293e9a8a"
+                    frameborder="0" allowFullScreen="false"></iframe>
+                <button onclick="Inteligencia_setorial_3()" class="overlay"></button>
+            </div>
+
+            <div class="blocksGrid">        
+                <iframe onclick="Inteligencia_setorial_4()" class="adjust" title="Dash_Mapa_Dados_v2"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiZTkzYWIxYWItYTY5OS00M2IwLWJhOTUtOTAyN2E3MTY3NTczIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9&pageName=ReportSection0f895ac2cddff3d61470"
+                    frameborder="0" allowFullScreen="false"></iframe>
+                <button onclick="Inteligencia_setorial_4()" class="overlay"></button>
+            </div>
+
+            <button onclick="GoToMenuEixoMacrossetorial()" class="menuBack"></button>
+           
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    // A função embedReport recebe o id do container, o id do relatório na ferramenta e as opções do Power BI.
+    embedReport('pbi1', 1, {extraParams: 'navContentPaneEnabled=false&filterPaneEnabled=false&border=false'});
+</script>
+</html>
