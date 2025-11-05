@@ -226,4 +226,5 @@ pyautogui.moveTo(1669,580, duration=0.5)
 for i in range(5):
     pyautogui.scroll(-1500) # a função é parametrizada em pixeis, para cima ou para baixo.
     sleep(1)
+    
 
