@@ -234,21 +234,20 @@ import pyautogui
 from time import sleep
 
 # clicando no edge
-pyautogui.click(783,1049, duration=0.5)
-sleep(1)
-pyautogui.press("enter")
-sleep(1)
+pyautogui.click(826,1057, duration=0.5)
+sleep(2)
 pyautogui.click(768,54)
-sleep(0.5)
+sleep(2)
 pyautogui.write("https://pt.wikipedia.org/wiki/Brasil?_gl=1*2ii28k*_ga*MTU3NTM0OTk0My4xNzYwOTc2Njk5*_ga_37GXT4VGQK*czE3NjIzNjE0NTYkbzExJGcxJHQxNzYyMzYxOTM3JGo0MiRsMCRoMA")
-sleep(0.5)
+sleep(5)
 pyautogui.press("enter")
 sleep(2)
 pyautogui.move(0,100, duration=0.5)
-sleep(1)
-for i in range(3):
-    pyautogui.scroll(-800)
-    sleep(0.3)
-sleep(0.5)
+sleep(2)
+pyautogui.scroll(-2600)
+sleep(2)
 pyautogui.click(264,481, duration=0.5)
-
+sleep(1)
+pyautogui.click(1896,17, duration=0.5)
+sleep(0.5)
+pyautogui.alert("Automação realizada com sucesso!")
