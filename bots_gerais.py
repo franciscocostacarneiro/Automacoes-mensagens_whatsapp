@@ -201,3 +201,29 @@
 # # ==============================
 # janela.after(1000, processar)
 # janela.mainloop()
+
+
+##########################################################################
+
+# 2 USANDO A ROLAGEM DO MOUSE - FUNÇÃO SCROLL()
+
+# Página utilizada para o exemplo: https://pt.wikipedia.org/wiki/Brasil?_gl=1*2ii28k*_ga*MTU3NTM0OTk0My4xNzYwOTc2Njk5*_ga_37GXT4VGQK*czE3NjIzNjE0NTYkbzExJGcxJHQxNzYyMzYxOTM3JGo0MiRsMCRoMA..
+
+#Esta função é importante para quando precisamos rolar uma página para baixo ou para cima, por exemplo para acessarmos links
+#ou listas de usuários em caixas de diálogos.
+
+import pyautogui
+from time import sleep
+
+# Num primeiro exemplo vamos rolar a página de seguidores do instagram. Com a janela do Instagram, usuários aberta de forma minimizada
+# no canto da tela, vamos:
+# levar o mouse até a caixa de diálogo
+
+#Inserir um sleep de espera para que eu abra a janela do instagram
+sleep(3)
+pyautogui.moveTo(1669,580, duration=0.5)
+#Agora vamos rolar a página para baixo
+for i in range(5):
+    pyautogui.scroll(-1500) # a função é parametrizada em pixeis, para cima ou para baixo.
+    sleep(1)
+
