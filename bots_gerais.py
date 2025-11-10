@@ -348,4 +348,4 @@
 # pyautogui.click(1896,17, duration=0.5)
 # sleep(0.5)
 # pyautogui.alert("Automação realizada com sucesso!")
->>>>>>> ae6d1c26098329f5b3ab2cd88ce33aeec5799651
+
