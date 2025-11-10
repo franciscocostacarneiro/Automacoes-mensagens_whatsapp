@@ -219,17 +219,14 @@
 
 # #Inserir um sleep de espera para que eu abra a janela do instagram
 # sleep(3)
-<<<<<<< HEAD
 # pyautogui.moveTo(1669,580, duration=0.5)
-=======
 # pyautogui.moveTo(1665,380, duration=0.5)
->>>>>>> ae6d1c26098329f5b3ab2cd88ce33aeec5799651
+
 # #Agora vamos rolar a página para baixo
 # for i in range(5):
 #     pyautogui.scroll(-1500) # a função é parametrizada em pixeis, para cima ou para baixo.
 #     sleep(1)
 
-<<<<<<< HEAD
 ##########################################################################
 
 # AUTOMAÇÃO DE SISTEMAS USANDO BOTOES DO TECLADO - FUNÇÃO HOTKEY()
