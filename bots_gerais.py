@@ -205,9 +205,7 @@
 
 ##########################################################################
 
-# 2 USANDO A ROLAGEM DO MOUSE - FUNÇÃO SCROLL()
-
-# Página utilizada para o exemplo: https://pt.wikipedia.org/wiki/Brasil?_gl=1*2ii28k*_ga*MTU3NTM0OTk0My4xNzYwOTc2Njk5*_ga_37GXT4VGQK*czE3NjIzNjE0NTYkbzExJGcxJHQxNzYyMzYxOTM3JGo0MiRsMCRoMA..
+# 2 USANDO A ROLAGEM DO MOUSE - FUNÇÃO SCROLL() - VERSÃO 1 - INSTAGRAM
 
 #Esta função é importante para quando precisamos rolar uma página para baixo ou para cima, por exemplo para acessarmos links
 #ou listas de usuários em caixas de diálogos.
@@ -221,12 +219,17 @@
 
 # #Inserir um sleep de espera para que eu abra a janela do instagram
 # sleep(3)
+<<<<<<< HEAD
 # pyautogui.moveTo(1669,580, duration=0.5)
+=======
+# pyautogui.moveTo(1665,380, duration=0.5)
+>>>>>>> ae6d1c26098329f5b3ab2cd88ce33aeec5799651
 # #Agora vamos rolar a página para baixo
 # for i in range(5):
 #     pyautogui.scroll(-1500) # a função é parametrizada em pixeis, para cima ou para baixo.
 #     sleep(1)
 
+<<<<<<< HEAD
 ##########################################################################
 
 # AUTOMAÇÃO DE SISTEMAS USANDO BOTOES DO TECLADO - FUNÇÃO HOTKEY()
@@ -318,3 +321,31 @@
 # pyautogui.click(1454,632, duration=0.5)
 # sleep(0.5)
 # pyautogui.click(1665,740, duration=0.5)
+##############################################################################
+
+# 2 USANDO A ROLAGEM DO MOUSE - FUNÇÃO SCROLL() - VERSÃO 2 - WIKIPEDIA
+
+# Página utilizada para o exemplo: https://pt.wikipedia.org/wiki/Brasil?_gl=1*2ii28k*_ga*MTU3NTM0OTk0My4xNzYwOTc2Njk5*_ga_37GXT4VGQK*czE3NjIzNjE0NTYkbzExJGcxJHQxNzYyMzYxOTM3JGo0MiRsMCRoMA..
+
+# import pyautogui
+# from time import sleep
+
+# # clicando no edge
+# pyautogui.click(826,1057, duration=0.5)
+# sleep(2)
+# pyautogui.click(768,54)
+# sleep(2)
+# pyautogui.write("https://pt.wikipedia.org/wiki/Brasil?_gl=1*2ii28k*_ga*MTU3NTM0OTk0My4xNzYwOTc2Njk5*_ga_37GXT4VGQK*czE3NjIzNjE0NTYkbzExJGcxJHQxNzYyMzYxOTM3JGo0MiRsMCRoMA")
+# sleep(5)
+# pyautogui.press("enter")
+# sleep(2)
+# pyautogui.move(0,100, duration=0.5)
+# sleep(2)
+# pyautogui.scroll(-2600)
+# sleep(2)
+# pyautogui.click(264,481, duration=0.5)
+# sleep(1)
+# pyautogui.click(1896,17, duration=0.5)
+# sleep(0.5)
+# pyautogui.alert("Automação realizada com sucesso!")
+>>>>>>> ae6d1c26098329f5b3ab2cd88ce33aeec5799651
