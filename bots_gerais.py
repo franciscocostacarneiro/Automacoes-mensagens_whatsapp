@@ -212,18 +212,109 @@
 #Esta função é importante para quando precisamos rolar uma página para baixo ou para cima, por exemplo para acessarmos links
 #ou listas de usuários em caixas de diálogos.
 
-import pyautogui
-from time import sleep
+# import pyautogui
+# from time import sleep
 
-# Num primeiro exemplo vamos rolar a página de seguidores do instagram. Com a janela do Instagram, usuários aberta de forma minimizada
-# no canto da tela, vamos:
-# levar o mouse até a caixa de diálogo
+# # Num primeiro exemplo vamos rolar a página de seguidores do instagram. Com a janela do Instagram, usuários aberta de forma minimizada
+# # no canto da tela, vamos:
+# # levar o mouse até a caixa de diálogo
 
-#Inserir um sleep de espera para que eu abra a janela do instagram
-sleep(3)
-pyautogui.moveTo(1669,580, duration=0.5)
-#Agora vamos rolar a página para baixo
-for i in range(5):
-    pyautogui.scroll(-1500) # a função é parametrizada em pixeis, para cima ou para baixo.
-    sleep(1)
+# #Inserir um sleep de espera para que eu abra a janela do instagram
+# sleep(3)
+# pyautogui.moveTo(1669,580, duration=0.5)
+# #Agora vamos rolar a página para baixo
+# for i in range(5):
+#     pyautogui.scroll(-1500) # a função é parametrizada em pixeis, para cima ou para baixo.
+#     sleep(1)
 
+##########################################################################
+
+# AUTOMAÇÃO DE SISTEMAS USANDO BOTOES DO TECLADO - FUNÇÃO HOTKEY()
+
+#a função hotkey é a que serve para pressionar dois botões ao mesmo tempo.
+
+# Para tal usei o site de teste: https://www.ethos.org.br/teste-login/
+
+# COMANDO PARA ABRIR A LISTA DE COMANDOS DAS TECLAS: print(PYAUTOGUI.KEYBOARD_KEYS)
+#['\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', 'accept', 'add', 'alt', 'altleft', 'altright', 'apps', 'backspace', 'browserback', 'browserfavorites', 'browserforward', 'browserhome', 'browserrefresh', 'browsersearch', 'browserstop', 'capslock', 'clear', 'convert', 'ctrl', 'ctrlleft', 'ctrlright', 'decimal', 'del', 'delete', 'divide', 'down', 'end', 'enter', 'esc', 'escape', 'execute', 'f1', 'f10', 'f11', 'f12', 'f13', 'f14', 'f15', 'f16', 'f17', 'f18', 'f19', 'f2', 'f20', 'f21', 'f22', 'f23', 'f24', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'final', 'fn', 'hanguel', 'hangul', 'hanja', 'help', 'home', 'insert', 'junja', 'kana', 'kanji', 'launchapp1', 'launchapp2', 'launchmail', 'launchmediaselect', 'left', 'modechange', 'multiply', 'nexttrack', 'nonconvert', 'num0', 'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9', 'numlock', 'pagedown', 'pageup', 'pause', 'pgdn', 'pgup', 'playpause', 'prevtrack', 'print', 'printscreen', 'prntscrn', 'prtsc', 'prtscr', 'return', 'right', 'scrolllock', 'select', 'separator', 'shift', 'shiftleft', 'shiftright', 'sleep', 'space', 'stop', 'subtract', 'tab', 'up', 'volumedown', 'volumemute', 'volumeup', 'win', 'winleft', 'winright', 'yen', 'command', 'option', 'optionleft', 'optionright']
+
+# import pyautogui
+#buscar uma senha
+# pyautogui.click(1392,195, duration=0.5)
+# sleep(0.5)
+# pyautogui.hotkey("ctrl", "c")
+# sleep(0.5)
+# pyautogui.click(1395,251, duration=0.5)
+# sleep(0.5)
+# pyautogui.hotkey("ctrl", "v")
+
+
+# pyautogui.click(1083,516, duration=1)
+# sleep(0.5)
+# pyautogui.write("chico_ilha@hotmail.com", interval=0.05)
+# sleep(0.5)
+# pyautogui.press("tab")
+# sleep(0.5)
+# pyautogui.write("Senha1234", interval=0.05)
+# sleep(0.5)
+# pyautogui.click(1081,688, duration=0.5)
+# sleep(0.5)
+# pyautogui.click(1423,799, duration=0.5)
+
+##########################################################################
+
+# CRIANDO UM ALERTA
+
+# import pyautogui
+
+# pyautogui.alert(text="Este é um alerta simples!", title="Alerta do PyAutoGUI", button="OK")
+
+##########################################################################
+
+# SOLICITANDO INFORMAÇÕES DO USUÁRIO - INPUT BOX
+
+# import pyautogui
+
+# nome = pyautogui.prompt(text="Qual é o seu nome?", title="Caixa de Entrada do PyAutoGUI", default="Seu nome aqui")
+
+# pyautogui.alert(f"Seja bem vindo, {nome}.")
+
+#CASO A INFORMAÇÃO SEJA UMA SENHA:
+
+# import pyautogui
+
+# senha= pyautogui.password(text="Digite sua senha:", title="Caixa de Senha do PyAutoGUI", default="", mask="*")
+
+
+##########################################################################
+
+# AUTOMAÇÃO PARA PREENCHIMENTO DE LOGIN COM INFORMAÇÕES DE LOGIN E SENHA DE USUÁRIO
+
+# Página para teste: https://www.ethos.org.br/teste-login/
+
+# Requerimento
+# import pyautogui
+# from time import sleep
+
+# # coleta da informação de login
+# login = pyautogui.prompt(text="Digite seu login de usuário:", title="Login do Usuário", default="seu_login_aqui")
+# sleep(0.5)
+# # preenchimento da resposta na página
+# pyautogui.click(1475,453, duration=0.5)
+# sleep(0.5)
+# pyautogui.write(login, interval=0.05)
+# sleep(0.5)
+
+# pyautogui.press("tab")
+# sleep(1)
+
+# # coleta da informação de senha
+# senha = pyautogui.password(text="Digite sua senha:", title="Senha do Usuário", default="", mask="*")
+# sleep(0.5)
+
+# # preenchimento da resposta na página
+# pyautogui.write(senha, interval=0.05)
+# sleep(0.5)
+# pyautogui.click(1454,632, duration=0.5)
+# sleep(0.5)
+# pyautogui.click(1665,740, duration=0.5)
