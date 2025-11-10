@@ -346,3 +346,38 @@
 # sleep(0.5)
 # pyautogui.alert("Automação realizada com sucesso!")
 
+##############################################################################
+
+# BOT DE SOLICITAÇÃO DE INFORMAÇÕES E PREENCHIMENTO EM SITE DE LOGIN
+
+# import pyautogui
+# from time import sleep
+
+# #site utilizado para o projeto: https://www.ethos.org.br/teste-login/
+
+# #Clicando no campo de login
+# pyautogui.click(1492,449, duration=0.5)
+# sleep(0.5)
+
+# # solicitando a informação do login
+# login = pyautogui.prompt(text="Digite seu login de usuário:", title="Login do Usuário", default="seu_login_aqui")
+# sleep(0.5)
+# # preenchendo o campo de login
+# pyautogui.write(login, interval=0.05)
+# sleep(0.5)
+# pyautogui.press("tab")
+# sleep(1)
+# # solicitando a informação da senha
+# senha = pyautogui.password(text="Digite sua senha:", title="Senha do Usuário", default="", mask="*")
+# sleep(0.5)
+# # preenchendo o campo da senha
+# pyautogui.write(senha, interval=0.05)
+# sleep(0.5)
+
+# # clicando no botão de não sou robo
+# pyautogui.click(1455,621, duration=0.5)
+# sleep(0.5)
+# # clicando no botão de entrar
+# pyautogui.click(1657,729, duration=0.5)
+# sleep(0.5)
+# pyautogui.alert(text="Login realizado com sucesso!", button="OK")
